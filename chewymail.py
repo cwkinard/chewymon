@@ -25,9 +25,9 @@ try:
 except:
    sys.exit(0)
 
-curs.execute("SELECT count(*) FROM rundata WHERE tsStamp > DATE_SUB(NOW(), INTERVAL 12 HOUR) and speed > 0")
+curs.execute("SELECT count(*) FROM rundata WHERE tsStamp > DATE_SUB(NOW(), INTERVAL 24 HOUR) and speed > 0")
 rotations = curs.fetchone()[0]
-curs.execute("SELECT MAX(speed) FROM rundata WHERE tsStamp > DATE_SUB(NOW(), INTERVAL 12 HOUR) and speed > 0")
+curs.execute("SELECT MAX(speed) FROM rundata WHERE tsStamp > DATE_SUB(NOW(), INTERVAL 24 HOUR) and speed > 0")
 maxspeed = curs.fetchone()[0]
  
 # Create a text/plain message
